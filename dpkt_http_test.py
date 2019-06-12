@@ -28,6 +28,7 @@ def print_http_requests(pcapdata):
         if count==100:
             pass
             #break
+        #将buf里面的str数据打包
         eth = dpkt.ethernet.Ethernet(buf)
         if not isinstance(eth.data, dpkt.ip.IP):
             print ("Non IP Packet type, not supported %s\n" % eth.data.__class__.__name__)
